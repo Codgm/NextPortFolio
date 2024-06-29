@@ -29,6 +29,7 @@ async function getData() {
       'Notion-Version': '2022-06-28',
       'Content-Type': 'application/json',
       Authorization: `Bearer ${TOKEN}`,
+      'Cache-Control': 'no-cache',
       'Cookie':"__cf_bm=NBR7Bos4pEcefQKrWYFp7352Qwut9sVsQf30kQA8gJk-1718785432-1.0.1.1-9mPMgHVX6aQVel31mI3Tmn9Ue9MMQJRDaWgYeSPgljVwOElMy0vheBJJWyYTvAQEorXt1o8A11e5nlJHnTS3Ww"
     },
     body: JSON.stringify({
@@ -37,15 +38,16 @@ async function getData() {
         "property": "이름",
         "direction": "ascending"
         }
-      ]
+      ],
     }),
     redirect: 'follow'
   };
 
   const res = await fetch(`https://api.notion.com/v1/databases/${DATABASE_ID}/query`, options)
   const projects = await res.json()
-  console.log(projects.cover)
+  console.log(projects.results)
 
   return projects.results
 } 
+
 

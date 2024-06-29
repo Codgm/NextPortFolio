@@ -10,14 +10,14 @@ export default function Footer() {
           </a>
         </Link>
         <p className="text-sm text-gray-500 dark:text-purple-600 sm:ml-6 sm:mt-0 mt-4">
-          © 2024 sgm portfolio —
+          © 2024 sgm portfolio.
           <a
             href="https://twitter.com/knyttneve"
             rel="noopener noreferrer"
             target="_blank"
             className="text-gray-600 ml-1"
           >
-            @knyttneve
+            sgm All rights reserved.
           </a>
         </p>
         <div className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start space-x-3">

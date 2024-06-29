@@ -1,7 +1,3 @@
-const s3Loader = ({ src, width, quality }) => {
-    const url = new URL(`https://prod-files-secure.s3.us-west-2.amazonaws.com${src}`);
-    return url.href;
-  };
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -19,12 +15,26 @@ const nextConfig = {
         NOTION_DATABASE_ID: process.env.NOTION_DATABASE_ID,
       },
     images: {
-        domains: [
-            'www.notion.so',
-            'images.unsplash.com',
-            'prod-files-secure.s3.us-west-2.amazonaws.com', 
-          ],
+        remotePatterns: [
+            {
+              protocol: 'https',
+              hostname: 'images.unsplash.com',
+              port: '',
+              pathname: '/photo-1534972195531-d756b9bfa9f2/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.notion.so',
+                port: '',
+                pathname: 'images/page-cover/woodcuts_16.jpg',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.notion.so',
+                port:'',
+                pathname: 'images/page-cover/nasa_multi-axis_gimbal_rig.jpg',
+            },
+        ],   
     },
 };
-
 export default nextConfig;
