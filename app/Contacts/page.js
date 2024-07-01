@@ -1,6 +1,6 @@
 import Layout from "../components/layout";
 
-export default function Contacts () {
+function Contacts () {
     return (
         <Layout>
             <div className="flex justify-center items-center h-full">
@@ -52,3 +52,5 @@ export default function Contacts () {
         </Layout>
     )
 }
+
+export default Contacts;
